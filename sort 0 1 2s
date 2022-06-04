@@ -1,0 +1,25 @@
+import java.util.* ;
+import java.io.*; 
+public class Solution 
+{
+    public static void sort012(int[] arr)
+    {
+        int l = 0,m=0,h=arr.length-1;
+        while( m<= h ){
+            if ( arr[m] == 0 ){
+                swap(l,m,arr);
+                l++;m++;
+            }else if ( arr[m] == 2 ){
+                swap(m,h,arr);
+                h--;
+            }else{
+                m++;
+            }
+        }
+    }
+    private static void swap(int l,int h,int arr[]){
+        int temp = arr[l];
+        arr[l] = arr[h];
+        arr[h] = temp;
+    }
+}
